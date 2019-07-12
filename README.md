@@ -1,65 +1,16 @@
-# restore-editors-on-checkout README
+# Restore Editors on Checkout
 
-This is the README for your extension "restore-editors-on-checkout". After writing up a brief description, we recommend including the following sections.
+When you switch your git branch, this VSCode extension restores the editors you had open when you were last working on that branch.
+
+![preview](https://github.com/mymikemiller/vscode-restore-editors-on-checkout/blob/master/demo.gif)
+
+> NOTE: This extension uses [Eric Amodio](https://github.com/eamodio)'s hack (see [Restore Editors](https://github.com/eamodio/vscode-restore-editors)) to access the list of open editors, thus it is subject to the same limitations (namely, it only works for file-based text documents).
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+- When this extension detects a git branch change, it automatically closes all editors and opens the editors that were opened the last time the user switched away from that branch while running this extension.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Subject to the same limitations [Restore Editors](https://github.com/eamodio/vscode-restore-editors) is subject to.
+- Currently employs polling to determine when the checked-out branch changes. This is obviously not ideal. Anyone know of a better way to do this?
